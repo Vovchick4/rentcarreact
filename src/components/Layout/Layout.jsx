@@ -1,9 +1,28 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
+
+import { Navbar, Sidebar, ScrollPages } from "../";
+
+// import styles from "./Layout.module.css";
 
 export default function Layout({ children }) {
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+
+  function openSidebar() {
+    setSidebarVisible(true);
+  }
+
+  function closeSidebar() {
+    setSidebarVisible(false);
+  }
+
   return (
-    <div>
-      <Suspense fallback={<p>Loading....</p>}>{children}</Suspense>
-    </div>
+    <>
+      <Navbar openSidebar={openSidebar} />
+      <Sidebar open={sidebarVisible} onClose={closeSidebar} />
+
+      <ScrollPages>
+        <Suspense fallback={<p>Loading....</p>}>{children}</Suspense>
+      </ScrollPages>
+    </>
   );
 }

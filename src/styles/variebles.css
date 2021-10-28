@@ -1,0 +1,14 @@
+:root {
+  --main-color: #1e1e20;
+  --bg-color: #171717;
+  --bg-card-color: #292929;
+  --dark-text-color: #dadada;
+  --light-text-color: #865bce;
+  --link-color: #4b5962;
+  --active-link-color: #94bdbf;
+  --bg-input-color: #313234;
+  --text-input-color: #464646;
+  --text-button-color: #2f2f2f;
+  --avatar-bg-color: #7b8b98;
+  --bg-overlay: rgba(0, 0, 0, 0.7);
+}
