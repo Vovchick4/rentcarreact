@@ -1,6 +1,6 @@
-import { Suspense, useState } from "react";
+import { Suspense, useState } from 'react';
 
-import { Navbar, Sidebar, ScrollPages } from "../";
+import { Navbar, Sidebar } from '../';
 
 // import styles from "./Layout.module.css";
 
@@ -20,9 +20,7 @@ export default function Layout({ children }) {
       <Navbar openSidebar={openSidebar} />
       <Sidebar open={sidebarVisible} onClose={closeSidebar} />
 
-      <ScrollPages>
-        <Suspense fallback={<p>Loading....</p>}>{children}</Suspense>
-      </ScrollPages>
+      <Suspense fallback={<p>Loading....</p>}>{children}</Suspense>
     </>
   );
 }
