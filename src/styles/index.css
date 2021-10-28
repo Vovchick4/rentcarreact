@@ -1,6 +1,29 @@
 @font-face {
   font-family: 'Sebneue';
   src: url(../font/SebneueAir-m9GG.otf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sebneue';
+  src: url(../font/SebneueBlack-dDGX.otf);
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Sebneue';
+  src: url(../font/SebneueBold-PwMm.otf);
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sebneue';
+  src: url(../font/SebneueExtrabold-LMBW.otf);
+  font-weight: 900;
+  font-style: normal;
 }
 
 *,
@@ -44,6 +67,7 @@ body {
 
 html {
   font-family: 'Sebneue', serif;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

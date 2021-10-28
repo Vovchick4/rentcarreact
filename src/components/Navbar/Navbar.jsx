@@ -1,20 +1,48 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import { Container } from "../";
+import { Container, Modal } from '../';
 
-import styles from "./Navbar.module.css";
+import styles from './Navbar.module.css';
 
-import { BsFillPlayFill } from "react-icons/bs";
-import { AiFillBell } from "react-icons/ai";
-import { BiSearchAlt } from "react-icons/bi";
-import { FiUsers } from "react-icons/fi";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { BsFillPlayFill } from 'react-icons/bs';
+import { AiFillBell } from 'react-icons/ai';
+import { BiSearchAlt } from 'react-icons/bi';
+import { FiUsers } from 'react-icons/fi';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
+const NavBarModals = {
+  playDemo: 'PLAY_DEMO',
+};
 export default function Navbar({ openSidebar }) {
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState('');
+  const [activeModal, setActiveModal] = useState(null);
+
+  function openPlayDemoModal() {
+    setActiveModal(NavBarModals.playDemo);
+  }
+
+  function closeModal() {
+    setActiveModal(null);
+  }
 
   return (
     <div className={styles.header}>
+      <Modal
+        visible={activeModal === NavBarModals.playDemo}
+        onClose={closeModal}
+        isBackgroundColorNone
+      >
+        <iframe
+          width="100%"
+          height="505"
+          src="https://www.youtube.com/embed/pNv5g_9EliQ?start=62"
+          title="YouTube video player"
+          style={{ borderRadius: 15 }}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </Modal>
       <Container>
         <div className={styles.headerContent}>
           <div className={styles.content}>
@@ -34,7 +62,10 @@ export default function Navbar({ openSidebar }) {
 
             <AiFillBell className={styles.bellIcon} />
 
-            <button className={styles.buttonPlayDemo}>
+            <button
+              className={styles.buttonPlayDemo}
+              onClick={openPlayDemoModal}
+            >
               <span className={styles.buttonText}>Demo</span>
               <span className={styles.iconFillPlay}>
                 <BsFillPlayFill />

@@ -17,8 +17,8 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <Navbar openSidebar={openSidebar} />
       <Sidebar open={sidebarVisible} onClose={closeSidebar} />
+      <Navbar openSidebar={openSidebar} />
 
       <Suspense fallback={<p>Loading....</p>}>{children}</Suspense>
     </>
