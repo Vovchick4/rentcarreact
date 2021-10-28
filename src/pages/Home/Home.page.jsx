@@ -1,8 +1,8 @@
-import { Container } from "../../components";
+import { Container } from '../../components';
 
-import styles from "./Home.module.css";
+import styles from './Home.module.css';
 
-import wallper from "../../images/wallper.jpg";
+import wallper from '../../images/wallper.jpg';
 
 export default function HomePage() {
   return (

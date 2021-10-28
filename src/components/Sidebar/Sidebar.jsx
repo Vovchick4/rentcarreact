@@ -1,41 +1,41 @@
-import { NavLink } from "react-router-dom";
-import { BsHouseFill } from "react-icons/bs";
-import { RiUser6Line } from "react-icons/ri";
-import { FaMoneyCheckAlt } from "react-icons/fa";
-import { MdModelTraining } from "react-icons/md";
-import { BsCartCheckFill } from "react-icons/bs";
+import { NavLink } from 'react-router-dom';
+import { BsHouseFill } from 'react-icons/bs';
+import { RiUser6Line } from 'react-icons/ri';
+import { FaMoneyCheckAlt } from 'react-icons/fa';
+import { MdModelTraining } from 'react-icons/md';
+import { BsCartCheckFill } from 'react-icons/bs';
 
-import styles from "./Sidebar.module.css";
-import urls from "../../config/urls";
-import logo from "../../images/logo.svg";
+import styles from './Sidebar.module.css';
+import urls from '../../config/urls';
+import logo from '../../images/logo.svg';
 
 const links = [
   {
-    label: "Home",
+    label: 'Home',
     icon: <BsHouseFill />,
     to: urls.home,
     exact: true,
   },
   {
-    label: "Profile",
+    label: 'Profile',
     icon: <RiUser6Line />,
     to: urls.profile,
     exact: true,
   },
   {
-    label: "Buy Boost",
+    label: 'Buy Boost',
     icon: <FaMoneyCheckAlt />,
     to: urls.buyBoost,
     exact: true,
   },
   {
-    label: "Coaching",
+    label: 'Coaching',
     icon: <MdModelTraining />,
     to: urls.coaching,
     exact: true,
   },
   {
-    label: "Account Trading",
+    label: 'Account Trading',
     icon: <BsCartCheckFill />,
     to: urls.accountTrading,
     exact: true,
@@ -52,8 +52,8 @@ export default function Sidebar({ open, onClose }) {
 
   return (
     <div>
-      <div className={classesDimmer.join(" ")} onClick={onClose}></div>
-      <aside className={classesSideBar.join(" ")}>
+      <div className={classesDimmer.join(' ')} onClick={onClose}></div>
+      <aside className={classesSideBar.join(' ')}>
         <div>
           <div className={styles.logo}>
             <img className={styles.logoSVG} src={logo} alt="logo elo boost" />
