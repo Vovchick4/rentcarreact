@@ -40,7 +40,6 @@ body {
   padding: 0;
   background-color: var(--main-color);
   color: var(--dark-text-color);
-  overflow-x: hidden;
 }
 
 html {
@@ -77,10 +76,4 @@ html {
 
 .overflow {
   overflow-y: hidden;
-}
-
-@media (max-width: 340px) {
-  body {
-    overflow-x: auto;
-  }
 }
