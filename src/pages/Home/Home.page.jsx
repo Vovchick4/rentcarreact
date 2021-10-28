@@ -13,20 +13,14 @@ export default function HomePage() {
         </div>
         <Container>
           <div className={styles.content}>
-            <p>HOME PAGE</p>
-          </div>
-          <div className={styles.content}>
-            <p>HOME PAGE</p>
-          </div>
-          <div className={styles.content}>
-            <p>HOME PAGE</p>
+            <p className={styles.heroTitle}>Elo Boost</p>
+            <p className={styles.gameText}>
+              <span className={styles.leagueTextColor}>League of </span>
+              <span className={styles.legendTextColor}>Legends</span>
+            </p>
           </div>
         </Container>
       </div>
-      <div>asd</div>
-      <div>asd</div>
-      <div>asd</div>
-      <div>asd</div>
     </>
   );
 }

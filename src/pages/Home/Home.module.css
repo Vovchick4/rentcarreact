@@ -23,3 +23,32 @@
 .content {
   margin-top: 200px;
 }
+
+.heroTitle {
+  font-weight: 800;
+  font-size: 83px;
+  color: var(--white-color);
+}
+
+.gameText {
+  font-weight: 800;
+  font-size: 43px;
+}
+
+.leagueTextColor {
+  color: var(--link-color);
+}
+
+.legendTextColor {
+  color: var(--light-text-color);
+}
+
+@media (max-width: 834px) {
+  .heroTitle {
+    font-size: 63px;
+  }
+
+  .gameText {
+    font-size: 34px;
+  }
+}

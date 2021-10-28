@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Sebneue";
+  font-family: 'Sebneue';
   src: url(../font/SebneueAir-m9GG.otf);
 }
 
@@ -44,7 +44,7 @@ body {
 }
 
 html {
-  font-family: "Sebneue", serif;
+  font-family: 'Sebneue', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -73,6 +73,10 @@ html {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   margin: -1px;
+}
+
+.overflow {
+  overflow-y: hidden;
 }
 
 @media (max-width: 340px) {

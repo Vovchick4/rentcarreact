@@ -48,6 +48,10 @@ export default function Sidebar({ open, onClose }) {
   if (open) {
     classesSideBar.push(styles.active);
     classesDimmer.push(styles.active);
+
+    document.body.classList.add('overflow');
+  } else {
+    document.body.classList.remove('overflow');
   }
 
   return (
