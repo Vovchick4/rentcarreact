@@ -1,14 +1,24 @@
-import { Switch, Redirect, Route } from "react-router";
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Switch, Redirect, Route } from 'react-router';
 
-import { Layout } from "../";
+import { Layout } from '../';
 
-import routes from "../../config/routes";
-import urls from "../../config/urls";
+import routes from '../../config/routes';
+import urls from '../../config/urls';
 
 export default function App() {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    const persistedLanguage = localStorage.getItem('language');
+    if (!persistedLanguage) return;
+
+    i18n.changeLanguage(persistedLanguage);
+  }, [i18n]);
+
   return (
     <Layout>
-      {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eaque est nulla, deserunt repudiandae expedita porro aliquid, omnis rerum hic id ab sunt adipisci minima similique maxime! Eius, eos alias! */}
       <Switch>
         {routes.map(({ component: Component, path, ...route }) => (
           <Route key={path} path={path} {...route}>

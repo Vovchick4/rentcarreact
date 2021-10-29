@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { Container, Modal } from '../';
+import { Container, Modal, Dropdown } from '../';
 
 import styles from './Navbar.module.css';
 
@@ -16,6 +17,9 @@ const NavBarModals = {
 export default function Navbar({ openSidebar }) {
   const [searchText, setSearchText] = useState('');
   const [activeModal, setActiveModal] = useState(null);
+  const [langDropdown, setLangDropdown] = useState(false);
+
+  const { i18n } = useTranslation();
 
   function openPlayDemoModal() {
     setActiveModal(NavBarModals.playDemo);
@@ -23,6 +27,14 @@ export default function Navbar({ openSidebar }) {
 
   function closeModal() {
     setActiveModal(null);
+  }
+
+  function openLangDropdown() {
+    setLangDropdown(true);
+  }
+
+  function closeLangDropdown() {
+    setLangDropdown(false);
   }
 
   return (
@@ -73,7 +85,39 @@ export default function Navbar({ openSidebar }) {
             </button>
           </div>
           <div className={styles.content}>
-            <p>ENG</p>
+            <div className={styles.dropdownContent}>
+              <p className={styles.langButton} onClick={openLangDropdown}>
+                {i18n.language}
+              </p>
+              <Dropdown
+                visible={langDropdown}
+                onClose={closeLangDropdown}
+                title={
+                  <h1 className={styles.dropdownTitle}>
+                    Lang<span className={styles.dropdownSubTilte}>uage</span>
+                  </h1>
+                }
+                options={[
+                  {
+                    key: 1,
+                    label: 'EN',
+                    onClick: () => {
+                      i18n.changeLanguage('en');
+                      localStorage.setItem('language', 'en');
+                    },
+                  },
+                  {
+                    key: 2,
+                    label: 'UA',
+                    onClick: () => {
+                      i18n.changeLanguage('ua');
+                      localStorage.setItem('language', 'ua');
+                    },
+                  },
+                ]}
+              />
+            </div>
+
             <div className={styles.avatarContent}>
               <p>Mr.Fedotov</p>
               <div className={styles.avatar}>

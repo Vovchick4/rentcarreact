@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import axios from 'axios';
 import { Container, ScrollPages } from '../../components';
 
 import styles from './Home.module.css';
@@ -5,6 +7,17 @@ import styles from './Home.module.css';
 import wallper from '../../images/wallper.jpg';
 
 export default function HomePage() {
+  useEffect(() => {
+    axios({
+      url: '/news',
+      method: 'GET',
+    })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((error) => console.log(error.message));
+  }, []);
+
   return (
     <>
       <div className={styles.home_content}>

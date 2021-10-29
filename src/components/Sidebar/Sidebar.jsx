@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { BsHouseFill } from 'react-icons/bs';
 import { RiUser6Line } from 'react-icons/ri';
 import { FaMoneyCheckAlt } from 'react-icons/fa';
@@ -54,6 +55,8 @@ export default function Sidebar({ open, onClose }) {
     document.body.classList.remove('overflow');
   }
 
+  const { t } = useTranslation();
+
   return (
     <div>
       <div className={classesDimmer.join(' ')} onClick={onClose}></div>
@@ -73,7 +76,7 @@ export default function Sidebar({ open, onClose }) {
                 onClick={onClose}
               >
                 <span className={styles.linkIcons}>{icon}</span>
-                <span className={styles.linkLabels}>{label}</span>
+                <span className={styles.linkLabels}>{t(label)}</span>
               </NavLink>
             ))}
           </nav>

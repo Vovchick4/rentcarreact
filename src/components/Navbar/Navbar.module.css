@@ -71,6 +71,30 @@
   color: var(--active-link-color);
 }
 
+.dropdownContent {
+  position: relative;
+}
+
+.langButton {
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.34s;
+}
+
+.langButton:hover {
+  color: var(--light-text-color);
+}
+
+.dropdownTitle {
+  font-size: 18px;
+  padding: 20px 0 5px 20px;
+  color: var(--white-color);
+}
+
+.dropdownSubTilte {
+  color: var(--light-text-color);
+}
+
 .buttonText {
   text-transform: uppercase;
 }
