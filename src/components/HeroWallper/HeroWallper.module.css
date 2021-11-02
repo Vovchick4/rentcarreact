@@ -1,0 +1,16 @@
+.heroWallper {
+  position: absolute;
+  top: 0;
+  left: 304px;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: bottom;
+}
+
+@media (max-width: 1050px) {
+  .heroWallper {
+    left: 0;
+  }
+}

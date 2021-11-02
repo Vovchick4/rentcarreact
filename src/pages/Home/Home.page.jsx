@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import axios from 'axios';
-import { Container, ScrollPages } from '../../components';
+import { HeroWallper, Container, ScrollPages } from '../../components';
 
 import styles from './Home.module.css';
 
@@ -21,9 +21,7 @@ export default function HomePage() {
   return (
     <>
       <div className={styles.home_content}>
-        <div className={styles.wallperContent}>
-          <img className={styles.wallper} src={wallper} alt="wallper" />
-        </div>
+        <HeroWallper wallper={wallper} />
         <ScrollPages>
           <Container>
             <div className={styles.content}>

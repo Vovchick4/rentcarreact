@@ -26,7 +26,7 @@ const links = [
   {
     label: 'Buy Boost',
     icon: <FaMoneyCheckAlt />,
-    to: urls.buyBoost,
+    to: urls.buyBoost + '/league',
     exact: true,
   },
   {

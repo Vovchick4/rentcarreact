@@ -10,12 +10,11 @@
 } */
 
 .container {
-  position: relative;
-  left: 304px;
+  margin-left: 304px;
 }
 
 @media (max-width: 1050px) {
   .container {
-    left: 0;
+    margin-left: 0;
   }
 }

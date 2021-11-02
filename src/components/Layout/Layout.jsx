@@ -1,6 +1,6 @@
 import { Suspense, useState } from 'react';
 
-import { Navbar, Sidebar } from '../';
+import { Navbar, Sidebar, Loader } from '../';
 
 // import styles from "./Layout.module.css";
 
@@ -20,7 +20,7 @@ export default function Layout({ children }) {
       <Sidebar open={sidebarVisible} onClose={closeSidebar} />
       <Navbar openSidebar={openSidebar} />
 
-      <Suspense fallback={<p>Loading....</p>}>{children}</Suspense>
+      <Suspense fallback={<Loader />}>{children}</Suspense>
     </>
   );
 }

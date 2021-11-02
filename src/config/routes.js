@@ -1,13 +1,13 @@
-import { lazy } from "react";
+import { lazy } from 'react';
 
-import urls from "./urls";
+import urls from './urls';
 
 const routes = [
   {
     path: urls.notFound,
     exact: true,
     component: lazy(() =>
-      import("../pages/NotFound" /* webpackChunkName: 'NotFound' */)
+      import('../pages/NotFound' /* webpackChunkName: 'NotFound' */)
     ),
     private: false,
     restricted: false,
@@ -16,7 +16,7 @@ const routes = [
     path: urls.home,
     exact: true,
     component: lazy(() =>
-      import("../pages/Home" /* webpackChunkName: 'Home' */)
+      import('../pages/Home' /* webpackChunkName: 'Home' */)
     ),
     private: false,
     restricted: false,
@@ -25,16 +25,16 @@ const routes = [
     path: urls.profile,
     exact: true,
     component: lazy(() =>
-      import("../pages/Profile" /* webpackChunkName: 'Profile' */)
+      import('../pages/Profile' /* webpackChunkName: 'Profile' */)
     ),
     private: false,
     restricted: false,
   },
   {
-    path: urls.buyBoost,
+    path: urls.buyBoost + '/:buyBoostId',
     exact: true,
     component: lazy(() =>
-      import("../pages/Buyboost" /* webpackChunkName: 'Buyboost' */)
+      import('../pages/Buyboost' /* webpackChunkName: 'Buyboost' */)
     ),
     private: false,
     restricted: false,
@@ -43,7 +43,7 @@ const routes = [
     path: urls.accountTrading,
     exact: true,
     component: lazy(() =>
-      import("../pages/Accounttrading" /* webpackChunkName: 'Accounttrading' */)
+      import('../pages/Accounttrading' /* webpackChunkName: 'Accounttrading' */)
     ),
     private: false,
     restricted: false,
@@ -52,7 +52,7 @@ const routes = [
     path: urls.coaching,
     exact: true,
     component: lazy(() =>
-      import("../pages/Coaching" /* webpackChunkName: 'Coaching' */)
+      import('../pages/Coaching' /* webpackChunkName: 'Coaching' */)
     ),
     private: false,
     restricted: false,
