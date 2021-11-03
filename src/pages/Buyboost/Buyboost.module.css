@@ -1,5 +1,4 @@
 .link_content {
-  display: flex;
   margin-top: 143px;
 }
 
@@ -21,4 +20,8 @@
 .subTitle {
   min-width: 100px;
   font-weight: 300;
+}
+
+.contentForm {
+  margin-top: 70px;
 }

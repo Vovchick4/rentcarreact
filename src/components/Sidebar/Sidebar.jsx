@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { BsHouseFill } from 'react-icons/bs';
 import { RiUser6Line } from 'react-icons/ri';
@@ -27,7 +27,7 @@ const links = [
     label: 'Buy Boost',
     icon: <FaMoneyCheckAlt />,
     to: urls.buyBoost + '/league',
-    exact: true,
+    exact: false,
   },
   {
     label: 'Coaching',
@@ -57,6 +57,9 @@ export default function Sidebar({ open, onClose }) {
 
   const { t } = useTranslation();
 
+  const location = useLocation();
+  const currUrl = location.pathname;
+
   return (
     <div>
       <div className={classesDimmer.join(' ')} onClick={onClose}></div>
@@ -67,18 +70,34 @@ export default function Sidebar({ open, onClose }) {
           </div>
 
           <nav className={styles.NavLink}>
-            {links.map(({ label, icon, ...link }) => (
-              <NavLink
-                key={link.to}
-                {...link}
-                className={styles.link}
-                activeClassName={styles.linkActive}
-                onClick={onClose}
-              >
-                <span className={styles.linkIcons}>{icon}</span>
-                <span className={styles.linkLabels}>{t(label)}</span>
-              </NavLink>
-            ))}
+            {links.map(({ label, icon, ...link }, index) =>
+              index !== 2 ? (
+                <NavLink
+                  key={link.to}
+                  {...link}
+                  className={styles.link}
+                  activeClassName={styles.linkActive}
+                  onClick={onClose}
+                >
+                  <span className={styles.linkIcons}>{icon}</span>
+                  <span className={styles.linkLabels}>{t(label)}</span>
+                </NavLink>
+              ) : (
+                <NavLink
+                  key={link.to}
+                  {...link}
+                  className={
+                    currUrl.search('buyboost') === -1
+                      ? styles.link
+                      : styles.linkActive
+                  }
+                  onClick={onClose}
+                >
+                  <span className={styles.linkIcons}>{icon}</span>
+                  <span className={styles.linkLabels}>{t(label)}</span>
+                </NavLink>
+              )
+            )}
           </nav>
         </div>
         <div>
