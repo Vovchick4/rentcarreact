@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { ScrollPages, Container, Button } from '../../components';
 import { LeaguePage, DuoPage } from './SubPages';
 
@@ -70,34 +69,33 @@ const links = [
 ];
 
 export default function Buyboost() {
-  const [indexLink, setIndexLink] = useState(0);
+  const { pathname } = useLocation();
 
   return (
     <div className={styles.link_content}>
       <ScrollPages>
         <Container>
           <div className={styles.link}>
-            {links.map(
-              ({ id, label, title, to, component, ...linkProps }, index) => (
-                <Button
-                  key={id}
-                  as={NavLink}
-                  to={urls.buyBoost + to}
-                  {...linkProps}
-                  activeClassName={styles.activeLink}
-                  onClick={() => setIndexLink(index)}
-                  contentCol
-                >
-                  <span className={styles.title}>{label}</span>
-                  <span className={styles.subTitle}>{title}</span>
-                </Button>
-              )
-            )}
+            {links.map(({ id, label, title, to, component, ...linkProps }) => (
+              <Button
+                variant="description_tab"
+                key={id}
+                as={NavLink}
+                to={urls.buyBoost + to}
+                {...linkProps}
+                activeClassName={styles.description_tabActive}
+                contentCol
+              >
+                <span className={styles.title}>{label}</span>
+                <span className={styles.subTitle}>{title}</span>
+              </Button>
+            ))}
+            <li className={styles.slider}></li>
           </div>
 
           <div className={styles.contentForm}>
-            {links.map(({ id, component }, index) => (
-              <div key={id}>{index === indexLink && component}</div>
+            {links.map(({ id, component, to }) => (
+              <div key={id}>{urls.buyBoost + to === pathname && component}</div>
             ))}
           </div>
         </Container>

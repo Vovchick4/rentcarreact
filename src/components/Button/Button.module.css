@@ -30,6 +30,45 @@
   color: var(--white-color);
 }
 
+.inputStyle {
+  composes: button;
+  font-size: 18px;
+  color: var(--text-button-light-color);
+  background: var(--bg-dark-input-color);
+  border-radius: 5px;
+  margin-top: 30px;
+  padding: 18px 34px;
+}
+
+.inputStyle:not(:first-child) {
+  margin-left: 8px;
+}
+
+.activeChecked {
+  composes: inputStyle;
+  color: var(--white-color);
+  background: var(--light-text-color);
+}
+
+.light {
+  composes: button;
+  font-size: 18px;
+  color: var(--dark-text-color);
+  background-color: var(--light-text-color);
+  border-radius: 5px;
+  padding: 16px 43px;
+}
+
+.description_tab {
+  composes: default;
+  float: left;
+  text-align: center;
+}
+
+.description_tab:not(:first-child) {
+  margin-left: 15px;
+}
+
 .fullWidth {
   width: 100%;
 }
@@ -52,4 +91,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+}
+
+@media (max-width: 480px) {
+  .description_tab {
+    width: 100%;
+  }
+
+  .description_tab:not(:first-child) {
+    margin-left: 0;
+  }
 }

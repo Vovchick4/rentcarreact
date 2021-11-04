@@ -66,6 +66,7 @@ body {
 }
 
 html {
+  scroll-behavior: smooth;
   font-family: 'Sebneue', sans-serif;
   font-style: normal;
   -webkit-font-smoothing: antialiased;

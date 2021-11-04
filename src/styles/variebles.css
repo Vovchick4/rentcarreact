@@ -5,6 +5,7 @@
   --dark-text-color: #dadada;
   --light-text-color: #865bce;
   --link-color: #4b5962;
+  --bg-dark-input-color: #333335;
   --active-link-color: #94bdbf;
   --bg-input-color: #313234;
   --text-input-color: #464646;
@@ -18,4 +19,5 @@
   --text-dropdown-color: #c4c4c4;
   --bg-color-button: #222222;
   --bg-light-color-button: #25222b;
+  --text-button-light-color: #828282;
 }

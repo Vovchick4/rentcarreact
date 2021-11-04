@@ -4,24 +4,67 @@
 }
 
 .containerFormInputs {
+  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  /* grid-column: span 2 / span 2; */
   background-color: var(--bg-dropdown-color);
   color: var(--white-color);
-  padding: 13px;
+  padding: 13px 13px 100px 13px;
+}
+
+.numberOne {
+  position: absolute;
+  top: 100px;
+  left: 40px;
+}
+
+.numberTwo {
+  position: absolute;
+  top: 100px;
+  right: 40px;
+}
+
+.numberThird {
+  position: absolute;
+  top: 55%;
+  left: 40px;
+}
+
+.numberFoth {
+  position: absolute;
+  top: 55%;
+  right: 40px;
+}
+
+.numberFivth {
+  position: absolute;
+  bottom: 15%;
+  left: 40px;
+}
+
+.numberSix {
+  position: absolute;
+  bottom: 15%;
+  right: 40px;
 }
 
 .containerFormSubmit {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   background-color: var(--bg-form-color);
   color: var(--dark-text-color);
   padding: 43px 34px;
+}
+
+.stickyHeaderFormContent {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 143px;
+}
+
+.contentButtonSubmit {
+  margin: 0 8px;
 }
 
 .totalPrice {
@@ -48,6 +91,18 @@
   margin-top: 38px;
 }
 
+.contentDiscount {
+  margin: 0 8px;
+}
+
+.labelDiscount {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+  color: var(--text-input-color);
+  margin-top: 8px;
+}
+
 .textInfo {
   color: var(--text-color-info);
   font-size: 14px;
@@ -63,5 +118,9 @@
 @media (max-width: 834px) {
   .contentForm {
     display: block;
+  }
+
+  .stickyHeaderFormContent {
+    align-items: center;
   }
 }

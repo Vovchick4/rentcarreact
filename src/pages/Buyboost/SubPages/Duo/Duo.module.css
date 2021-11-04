@@ -1,0 +1,99 @@
+.textInfo {
+  font-size: 18px;
+  color: var(--link-color);
+}
+
+.textActive {
+  color: var(--active-link-color);
+}
+
+.formSelect {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+}
+
+.pictureContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 275px;
+}
+
+.headImg {
+  width: 99px;
+  height: 99px;
+}
+
+.arrowRight {
+  font-size: 34px;
+  transform: rotate(-40deg);
+  margin: 34px 0;
+}
+
+.title {
+  color: var(--white-color);
+  font-size: 21px;
+}
+
+.titleActiveText {
+  color: var(--light-text-color);
+}
+
+.titleServer {
+  color: var(--white-color);
+  font-size: 21px;
+  margin-top: 90px;
+}
+
+.titleType {
+  color: var(--white-color);
+  font-size: 21px;
+  margin-top: 175px;
+}
+
+@media (max-width: 1400px) {
+  .formSelect {
+    flex-direction: column;
+  }
+
+  .pictureContent {
+    width: 100%;
+  }
+
+  .arrowRight {
+    transform: rotate(43deg);
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 834px) {
+  .formSelect {
+    flex-direction: row;
+  }
+
+  .pictureContent {
+    width: 275px;
+  }
+
+  .arrowRight {
+    font-size: 34px;
+    transform: rotate(-40deg);
+    margin: 34px 0;
+  }
+}
+
+@media (max-width: 699px) {
+  .formSelect {
+    flex-direction: column;
+  }
+
+  .pictureContent {
+    width: 100%;
+  }
+
+  .arrowRight {
+    transform: rotate(43deg);
+    margin: 20px auto;
+  }
+}

@@ -13,7 +13,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 
 const theme = {
   none: 'transparent',
-  bgOverLay: 'rgba(0, 0, 0, 0.34)',
+  bgOverLay: 'rgba(0, 0, 0, 0.43)',
 };
 
 const NavBarModals = {
@@ -63,9 +63,13 @@ export default function Navbar({ openSidebar }) {
 
   return (
     <React.Fragment>
-      {backgroundColorNavbar === theme.bgOverLay && (
-        <div className={styles.bgOverLay} />
-      )}
+      <div
+        className={
+          backgroundColorNavbar === theme.bgOverLay
+            ? styles.bgOverLayActive
+            : styles.bgOverLay
+        }
+      />
       <div
         className={styles.header}
         style={{

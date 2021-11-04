@@ -6,6 +6,7 @@ import styles from './Button.module.css';
 export default function Button({
   type = 'button',
   variant = 'default',
+  visible,
   fullWidth = false,
   contentCol = false,
   icon,
@@ -19,6 +20,10 @@ export default function Button({
 
   if (fullWidth) {
     classes.push(styles.fullWidth);
+  }
+
+  if (visible) {
+    classes.push(styles.activeChecked);
   }
 
   return createElement(
