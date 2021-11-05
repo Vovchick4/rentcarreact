@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Select.module.css';
-
 import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
+import checkIcon from '../../../images/ic-check.svg';
 
 export default function Select({ list, defaultTitle }) {
   const [defaultValue, setDefaultValue] = useState(defaultTitle);
@@ -18,10 +18,10 @@ export default function Select({ list, defaultTitle }) {
   };
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('click', handleClickOutside);
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('click', handleClickOutside);
     };
   }, []);
 
@@ -48,7 +48,16 @@ export default function Select({ list, defaultTitle }) {
             className={isOpen ? styles.optionActive : styles.option}
             onClick={() => setDefaultValue(item.label)}
           >
-            {item.label}
+            <span>{item.label}</span>
+            {item.label === defaultValue && (
+              <span className={styles.contentCheckIcon}>
+                <img
+                  className={styles.checkIcon}
+                  src={checkIcon}
+                  alt="checkIcon"
+                />
+              </span>
+            )}
           </li>
         ))}
       </ul>

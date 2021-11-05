@@ -12,6 +12,12 @@
 
 .description_tabActive {
   background: var(--bg-light-color-button);
+  color: var(--white-color);
+}
+
+.description_tabActive .subTitle {
+  color: var(--white-color);
+  font-weight: 700;
 }
 
 .description_tabActive:first-child ~ .slider {
@@ -20,6 +26,30 @@
 
 .description_tabActive:nth-child(4) ~ .slider {
   left: 240px;
+}
+
+.description_tabActive:nth-child(5) ~ .slider {
+  left: 465px;
+}
+
+.description_tabActive:nth-child(6) ~ .slider {
+  left: 690px;
+}
+
+.description_tabActive:nth-child(7) ~ .slider {
+  left: 915px;
+}
+
+.description_tabActive:nth-child(8) ~ .slider {
+  left: 1140px;
+}
+
+.description_tabActive:nth-child(9) ~ .slider {
+  left: 1365px;
+}
+
+.description_tabActive:nth-child(10) ~ .slider {
+  left: 1590px;
 }
 
 .slider {
@@ -91,4 +121,5 @@
 .subTitle {
   min-width: 100px;
   font-weight: 300;
+  color: var(--text-input-color);
 }

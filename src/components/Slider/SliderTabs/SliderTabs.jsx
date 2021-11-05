@@ -50,9 +50,6 @@ export default function SliderTabs({ list }) {
     setCurrent((prev) => prev + 40);
   }
 
-  console.log(current);
-  console.log(window.innerWidth);
-
   return (
     <ul className={styles.link}>
       <div className={styles.content}>

@@ -36,6 +36,7 @@
 
 .input::placeholder {
   color: var(--link-color);
+  transition: color 0.34s;
 }
 
 .input:focus::placeholder {

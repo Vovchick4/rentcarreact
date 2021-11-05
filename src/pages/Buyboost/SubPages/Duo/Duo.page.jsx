@@ -5,7 +5,7 @@ import { Input, FormRow, Button } from '../../../../components';
 import styles from './Duo.module.css';
 
 import { GiPaperArrow } from 'react-icons/gi';
-import headImg from '../../../../images/bronze_1 1.png';
+import headImg from '../../../../images/bronze_1.png';
 import bronze_1 from '../../../../images/bronze_1 2.png';
 
 const listLeague = [
@@ -119,7 +119,7 @@ export default function DuoPage() {
           <Input
             variant="inputFill"
             padding="16px 20px"
-            placeholder="Enter name"
+            placeholder="Enter Name"
           />
         </div>
       </div>

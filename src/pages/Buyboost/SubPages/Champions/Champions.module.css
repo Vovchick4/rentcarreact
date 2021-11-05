@@ -1,0 +1,72 @@
+.textInfo {
+  font-size: 18px;
+  color: var(--link-color);
+}
+
+.textActive {
+  color: var(--active-link-color);
+}
+
+.formContent {
+  display: flex;
+  justify-content: space-around;
+}
+
+.inputContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 270px;
+}
+
+.title {
+  color: var(--white-color);
+  font-size: 21px;
+  margin-top: 90px;
+  margin-bottom: 10px;
+}
+
+.titleTokens {
+  color: var(--white-color);
+  font-size: 21px;
+  margin-top: 175px;
+  margin-bottom: 10px;
+}
+
+.titleGame {
+  color: var(--white-color);
+  font-size: 21px;
+  margin-top: 90px;
+  margin-bottom: 10px;
+}
+
+.titleActiveText {
+  color: var(--light-text-color);
+}
+
+@media (max-width: 1340px) {
+  .formContent {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 834px) {
+  .formContent {
+    flex-direction: row;
+  }
+
+  .inputContent:not(:first-child) {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 570px) {
+  .formContent {
+    flex-direction: column;
+  }
+
+  .inputContent:not(:first-child) {
+    margin-left: 0;
+  }
+}

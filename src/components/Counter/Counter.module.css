@@ -1,0 +1,94 @@
+.counterContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  z-index: 43;
+}
+
+.count {
+  width: 100%;
+  font-size: 24px;
+  color: var(--white-color);
+  background-color: var(--bg-dark-input-color);
+  margin: 0 10px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 16px 70px;
+  transition: color 0.34s linear, background 0.34s linear, width 0.34s;
+  display: block;
+  font-family: 'Sebneue', sans-serif;
+}
+
+.count::placeholder,
+.count::-moz-placeholder,
+.count::-webkit-input-placeholder {
+  font-family: 'Sebneue', sans-serif;
+}
+
+.count:focus {
+  outline: none;
+  color: var(--text-dropdown-color);
+  background-color: var(--bg-dark-input-color);
+}
+
+.count::placeholder {
+  color: var(--link-color);
+  transition: color 0.34s;
+}
+
+.count:focus::placeholder {
+  color: var(--text-dropdown-color);
+}
+
+.arrowContent {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  width: 52px;
+  cursor: pointer;
+  color: var(--link-color);
+  background-color: var(--bg-dark-input-color);
+  font-size: 38px;
+  border-radius: 5px;
+  border: none;
+  transition: color 0.34s, background 0.34s;
+}
+
+.arrowContent:disabled {
+  background-color: var(--dark-text-color);
+}
+
+.arrowContent:disabled:hover {
+  color: var(--link-color);
+  background-color: var(--dark-text-color);
+}
+
+.arrowContent:hover {
+  color: var(--white-color);
+  background-color: var(--light-text-color);
+}
+
+.counterContent input {
+  margin-top: 0;
+  border: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 430px) {
+  .count {
+    width: 100%;
+    margin: 0;
+  }
+}

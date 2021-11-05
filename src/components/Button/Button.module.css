@@ -63,6 +63,12 @@
   composes: default;
   float: left;
   text-align: center;
+  transition: color 0.34s;
+}
+
+.description_tab:hover span {
+  font-weight: 700;
+  color: var(--white-color);
 }
 
 .description_tab:not(:first-child) {
@@ -91,14 +97,4 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-}
-
-@media (max-width: 480px) {
-  .description_tab {
-    width: 100%;
-  }
-
-  .description_tab:not(:first-child) {
-    margin-left: 0;
-  }
 }

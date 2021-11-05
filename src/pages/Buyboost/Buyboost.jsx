@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import { ScrollPages, Container, SliderTabs } from '../../components';
-import { LeaguePage, DuoPage } from './SubPages';
+import { LeaguePage, DuoPage, NormalPage, ChampionsPage } from './SubPages';
 
 import styles from './Buyboost.module.css';
 import urls from '../../config/urls';
@@ -12,7 +12,6 @@ const links = [
     title: 'Boosting',
     to: urls.league,
     exact: false,
-    strict: true,
     component: <LeaguePage />,
   },
   {
@@ -21,7 +20,6 @@ const links = [
     title: 'Boosting',
     to: urls.duo,
     exact: false,
-    strict: true,
     component: <DuoPage />,
   },
   {
@@ -30,6 +28,7 @@ const links = [
     title: 'Matches',
     to: urls.normal,
     exact: false,
+    component: <NormalPage />,
   },
   {
     id: 4,
@@ -37,6 +36,7 @@ const links = [
     title: 'Mastery',
     to: urls.champion,
     exact: false,
+    component: <ChampionsPage />,
   },
   {
     id: 5,

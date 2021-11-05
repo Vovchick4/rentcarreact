@@ -10,5 +10,6 @@ export { default as HeroWallper } from './HeroWallper';
 export { default as Loader } from './Loader';
 export { default as Input } from './Input';
 export { default as Button } from './Button';
+export { default as Counter } from './Counter';
 export { default as FormRow } from './FormRow';
 export { default as SliderTabs } from './Slider/SliderTabs';
