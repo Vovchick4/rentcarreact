@@ -1,0 +1,94 @@
+.link {
+  display: flex;
+  position: relative;
+  list-style: none;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.link > a {
+  transition: transform 0.34s;
+}
+
+.description_tabActive {
+  background: var(--bg-light-color-button);
+}
+
+.description_tabActive:first-child ~ .slider {
+  left: 0;
+}
+
+.description_tabActive:nth-child(4) ~ .slider {
+  left: 240px;
+}
+
+.slider {
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+  width: 210px;
+  height: 4px;
+  background-color: var(--light-text-color);
+  transition: left 0.34s, transform 0.34s;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  height: 100%;
+  font-size: 38px;
+  z-index: 1;
+  transition: color 0.34s;
+}
+
+.arrow:hover {
+  color: var(--light-text-color);
+}
+
+.arrowLeft {
+  composes: arrow;
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--main-color) 80%,
+    rgba(33, 33, 33, 0) 100%
+  );
+}
+
+.arrowLeft::after {
+  height: 100%;
+  width: 50px;
+  content: '';
+  pointer-events: none;
+}
+
+.arrowRight {
+  composes: arrow;
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--main-color) 80%,
+    rgba(33, 33, 33, 0) 100%
+  );
+}
+
+.arrowRight::before {
+  height: 100%;
+  width: 50px;
+  content: '';
+  pointer-events: none;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.subTitle {
+  min-width: 100px;
+  font-weight: 300;
+}

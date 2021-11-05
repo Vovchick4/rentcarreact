@@ -2,44 +2,6 @@
   margin-top: 143px;
 }
 
-.link {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  list-style: none;
-}
-
-.description_tabActive {
-  background: var(--bg-light-color-button);
-}
-
-.description_tabActive:first-child ~ .slider {
-  left: 0;
-}
-
-.description_tabActive:nth-child(2) ~ .slider {
-  left: 225px;
-}
-
-.slider {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 210px;
-  height: 4px;
-  background-color: var(--light-text-color);
-  transition: left 0.34s;
-}
-
-.title {
-  font-weight: 700;
-}
-
-.subTitle {
-  min-width: 100px;
-  font-weight: 300;
-}
-
 .contentForm {
   margin-top: 70px;
 }
