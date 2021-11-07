@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import Select from './Select';
@@ -16,22 +15,15 @@ export default function Input({
   error,
   ...inputProps
 }) {
-  let inputRef = useRef();
   const classesInput = [styles[variant]];
-
-  const handleFocusInputCurr = () => {
-    setTimeout(() => inputRef.current.focus(), 300);
-  };
 
   if (error) {
     classesInput.push(styles.inputError);
-    handleFocusInputCurr();
   }
 
   return (
     <div className={styles.container}>
       <input
-        ref={inputRef}
         className={classesInput.join(' ')}
         style={{ padding }}
         type={type}

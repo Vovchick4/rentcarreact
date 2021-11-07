@@ -9,10 +9,10 @@ import numberFoth from '../../../images/4.svg';
 import numberFivth from '../../../images/5.svg';
 import numberSix from '../../../images/6.svg';
 
-export default function Substrate({ children }) {
+export default function Substrate({ children, onSubmit }) {
   return (
     <Container isMedia>
-      <form className={styles.contentForm}>
+      <form className={styles.contentForm} onSubmit={onSubmit}>
         <div className={styles.containerFormInputs}>
           <img className={styles.numberOne} src={numberOne} alt="numberOne" />
           <img className={styles.numberTwo} src={numberTwo} alt="numberTwo" />
