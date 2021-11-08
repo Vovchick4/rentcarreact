@@ -8,7 +8,7 @@ export default function Modal({
   children,
   className,
   onClose,
-  isBackgroundColorNone
+  isBackgroundColorNone,
 }) {
   function handleDimmerClick(e) {
     if (e.target !== e.currentTarget) {
@@ -17,11 +17,11 @@ export default function Modal({
 
     onClose();
   }
-
+//modal
   return (
     <CSSTransition in={visible} unmountOnExit classNames={fadeIn} timeout={75}>
       <div className={styles.dimmer} onMouseDown={handleDimmerClick}>
-        <div
+        <div    
           className={`${styles.modal} ${className}`}
           style={isBackgroundColorNone && { backgroundColor: 'transparent' }}
         >
