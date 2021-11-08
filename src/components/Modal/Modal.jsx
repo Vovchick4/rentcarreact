@@ -2,13 +2,13 @@ import { CSSTransition } from 'react-transition-group';
 
 import styles from './Modal.module.css';
 import fadeIn from '../../styles/animation/fadeIn.module.css';
-
+//Properties
 export default function Modal({
   visible,
   children,
   className,
   onClose,
-  isBackgroundColorNone,
+  isBackgroundColorNone
 }) {
   function handleDimmerClick(e) {
     if (e.target !== e.currentTarget) {
