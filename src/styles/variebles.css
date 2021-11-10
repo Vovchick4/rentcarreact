@@ -20,4 +20,6 @@
   --bg-color-button: #222222;
   --bg-light-color-button: #25222b;
   --text-button-light-color: #828282;
+  --bg-over-flow-color: #999999;
+  --border-bottom-gray-color: rgba(0, 0, 0, 0.05);
 }

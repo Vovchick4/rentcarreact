@@ -1,6 +1,7 @@
 .content {
   position: relative;
   width: 100%;
+  user-select: none;
 }
 
 .selectContent {
@@ -19,33 +20,44 @@
 
 .selectContentActive {
   composes: selectContent;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.overflow {
+  overflow: auto;
+  margin: 0 8px 0 0;
+}
+
+.overflow::-webkit-scrollbar-track {
+  background-color: var(--dark-text-color);
+  border-radius: 5px;
+}
+
+.overflow::-webkit-scrollbar-thumb {
+  background-color: var(--bg-over-flow-color);
+  border-radius: 5px;
 }
 
 .optionContent {
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-content: space-between;
   font-size: 18px;
   height: 0;
-  margin-top: 0;
   color: var(--main-color);
   background-color: var(--text-dropdown-color);
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  overflow: auto;
+  cursor: pointer;
   transition: height 0.34s;
 }
 
 .optionContentActive {
   composes: optionContent;
-  height: 140px;
+  height: 110px;
 }
 
 .option {
-  border-bottom: 2px solid var(--bg-overlay);
+  border-bottom: 2px solid var(--border-bottom-gray-color);
   padding: 10px 20px;
   opacity: 0;
   transition: opacity 0.2 linear;
@@ -69,8 +81,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background-color: var(--main-color);
+}
+
+.error {
+  color: palevioletred;
+  transition: color 0.34s;
 }

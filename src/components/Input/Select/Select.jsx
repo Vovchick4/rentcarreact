@@ -3,8 +3,7 @@ import styles from './Select.module.css';
 import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
 import checkIcon from '../../../images/ic-check.svg';
 
-export default function Select({ list, defaultTitle }) {
-  const [defaultValue, setDefaultValue] = useState(defaultTitle);
+export default function Select({ list, defaultTitle, value, onChange, error }) {
   const [isOpen, setIsOpen] = useState(false);
   const containerDropdown = useRef();
 
@@ -32,34 +31,39 @@ export default function Select({ list, defaultTitle }) {
         className={!isOpen ? styles.selectContent : styles.selectContentActive}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span>{defaultValue}</span>
+        <span className={error && styles.error}>
+          {value === '' ? defaultTitle : value}
+        </span>
         {isOpen ? (
           <RiArrowUpSLine fontSize="24" />
         ) : (
-          <RiArrowDownSLine fontSize="24" />
+          <RiArrowDownSLine style={{ pointerEvents: 'none' }} fontSize="24" />
         )}
       </div>
+
       <ul
         className={isOpen ? styles.optionContentActive : styles.optionContent}
       >
-        {list.map((item) => (
-          <li
-            key={item.id}
-            className={isOpen ? styles.optionActive : styles.option}
-            onClick={() => setDefaultValue(item.label)}
-          >
-            <span>{item.label}</span>
-            {item.label === defaultValue && (
-              <span className={styles.contentCheckIcon}>
-                <img
-                  className={styles.checkIcon}
-                  src={checkIcon}
-                  alt="checkIcon"
-                />
-              </span>
-            )}
-          </li>
-        ))}
+        <div className={styles.overflow}>
+          {list.map((item) => (
+            <li
+              key={item.id}
+              className={isOpen ? styles.optionActive : styles.option}
+              onClick={() => onChange(item.label)}
+            >
+              <span>{item.label}</span>
+              {item.label === value && (
+                <span className={styles.contentCheckIcon}>
+                  <img
+                    className={styles.checkIcon}
+                    src={checkIcon}
+                    alt="checkIcon"
+                  />
+                </span>
+              )}
+            </li>
+          ))}
+        </div>
       </ul>
     </div>
   );

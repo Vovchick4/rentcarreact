@@ -2,25 +2,12 @@ import Substrate from '../../Substrate';
 import { Input } from '../../../../components';
 
 import styles from './Champions.module.css';
-
-const listLeague = [
-  {
-    id: 1,
-    label: 'Example',
-  },
-  {
-    id: 2,
-    label: 'Choose',
-  },
-  {
-    id: 3,
-    label: 'Chies',
-  },
-  {
-    id: 4,
-    label: 'Lopata',
-  },
-];
+import {
+  server,
+  champions,
+  tokensLeft,
+  lvl,
+} from '../../../../data/BuyBoostDataSelects';
 
 export default function ChampionsPage() {
   return (
@@ -40,14 +27,14 @@ export default function ChampionsPage() {
             <span className={styles.titleActiveText}>Champion</span>
           </p>
 
-          <Input.Select list={listLeague} defaultTitle="Select Champion" />
+          <Input.Select list={champions} defaultTitle="Select Champion" />
 
           <p className={styles.titleTokens}>
             <span>Tokens </span>
             <span className={styles.titleActiveText}>Left</span>
           </p>
 
-          <Input.Select list={listLeague} defaultTitle="Tokens remaining" />
+          <Input.Select list={tokensLeft} defaultTitle="Tokens remaining" />
 
           <p className={styles.titleGame}>
             <span>Game </span>
@@ -66,15 +53,15 @@ export default function ChampionsPage() {
             <span className={styles.titleActiveText}>Mastery</span>
           </p>
 
-          <Input.Select list={listLeague} defaultTitle="Select LVL" />
-          <Input.Select list={listLeague} defaultTitle="Select LVL" />
+          <Input.Select list={lvl} defaultTitle="Select LVL" />
+          <Input.Select list={lvl} defaultTitle="Select LVL" />
 
           <p className={styles.titleGame}>
             <span>Your </span>
             <span className={styles.titleActiveText}>Server</span>
           </p>
 
-          <Input.Select list={listLeague} defaultTitle="Select Server" />
+          <Input.Select list={server} defaultTitle="Select Server" />
 
           <p className={styles.titleGame}>
             <span>Account </span>

@@ -1,0 +1,13 @@
+.Toastify__toast--default {
+  color: var(--white-color);
+  font-family: inherit;
+  background-color: var(--bg-form-color);
+}
+
+.Toastify__progress-bar--default {
+  background: var(--light-text-color);
+}
+
+.Toastify__close-button {
+  color: var(--white-color);
+}

@@ -4,6 +4,7 @@
   list-style: none;
   padding: 20px 0;
   overflow: hidden;
+  user-select: none;
 }
 
 .link > a {
@@ -68,8 +69,8 @@
 }
 
 .arrow {
-  cursor: pointer;
   position: absolute;
+  cursor: pointer;
   height: 100%;
   font-size: 38px;
   z-index: 1;

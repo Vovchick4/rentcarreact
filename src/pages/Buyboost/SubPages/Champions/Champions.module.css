@@ -54,6 +54,7 @@
 @media (max-width: 834px) {
   .formContent {
     flex-direction: row;
+    align-items: flex-start;
   }
 
   .inputContent:not(:first-child) {
@@ -64,6 +65,7 @@
 @media (max-width: 570px) {
   .formContent {
     flex-direction: column;
+    align-items: center;
   }
 
   .inputContent:not(:first-child) {

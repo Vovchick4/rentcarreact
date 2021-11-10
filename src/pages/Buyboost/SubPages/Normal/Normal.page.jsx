@@ -3,27 +3,8 @@ import Substrate from '../../Substrate';
 import { Input, Counter } from '../../../../components';
 
 import styles from './Normal.module.css';
-
+import { server, queue, service } from '../../../../data/BuyBoostDataSelects';
 import bronze_1_1 from '../../../../images/bronze_1 1.png';
-
-const listLeague = [
-  {
-    id: 1,
-    label: 'Example',
-  },
-  {
-    id: 2,
-    label: 'Choose',
-  },
-  {
-    id: 3,
-    label: 'Chies',
-  },
-  {
-    id: 4,
-    label: 'Lopata',
-  },
-];
 
 export default function NormalPage() {
   const [count, setCount] = useState(0);
@@ -58,14 +39,14 @@ export default function NormalPage() {
             <span className={styles.titleActiveText}>Server</span>
           </p>
 
-          <Input.Select list={listLeague} defaultTitle="Select Server" />
+          <Input.Select list={server} defaultTitle="Select Server" />
 
           <p className={styles.title}>
             <span>Type of </span>
             <span className={styles.titleActiveText}>Service</span>
           </p>
 
-          <Input.Select list={listLeague} defaultTitle="Select Service" />
+          <Input.Select list={service} defaultTitle="Select Service" />
 
           <p className={styles.title}>
             <span>Enter </span>
@@ -86,7 +67,7 @@ export default function NormalPage() {
             <span className={styles.titleActiveText}>Queue</span>
           </p>
 
-          <Input.Select list={listLeague} defaultTitle="Select Queue" />
+          <Input.Select list={queue} defaultTitle="Select Queue" />
 
           <p className={styles.title}>
             <span>Number of </span>

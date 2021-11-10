@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { MdOutlineKeyboardArrowLeft } from 'react-icons/md';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
@@ -6,48 +6,28 @@ import { Button } from '../..';
 
 import styles from './SliderTabs.module.css';
 import urls from '../../../config/urls';
+import { Visible } from '../../../utils/ViewPortElement';
 
 export default function SliderTabs({ list }) {
   const [current, setCurrent] = useState(0);
 
+  const buttonsRef = useRef(null);
+
   function prevNext() {
-    if (window.innerWidth <= 500 && window.innerWidth >= 0) {
-      if (current <= -680) {
-        return;
-      }
-    } else if (window.innerWidth <= 800 && window.innerWidth > 500) {
-      if (current <= -560) {
-        return;
-      }
-    } else if (window.innerWidth <= 1000 && window.innerWidth > 800) {
-      if (current <= -480) {
-        return;
-      }
-    } else if (window.innerWidth <= 1200 && window.innerWidth > 1000) {
-      if (current <= -520) {
-        return;
-      }
-    } else if (window.innerWidth <= 1400 && window.innerWidth > 1200) {
-      if (current <= -400) {
-        return;
-      }
-    } else if (window.innerWidth <= 1800 && window.innerWidth > 1400) {
-      if (current <= -320) {
-        return;
-      }
-    } else {
-      if (current <= -120) {
+    if (buttonsRef.current) {
+      if (Visible(buttonsRef.current)) {
         return;
       }
     }
-    setCurrent((prev) => prev - 40);
+
+    setCurrent((prev) => prev - 120);
   }
 
   function prevBack() {
     if (current === 0) {
       return;
     }
-    setCurrent((prev) => prev + 40);
+    setCurrent((prev) => prev + 120);
   }
 
   return (
@@ -61,15 +41,13 @@ export default function SliderTabs({ list }) {
         )}
       </div>
       <div className={styles.content}>
-        {window.innerWidth !== 2200 && (
-          <MdOutlineKeyboardArrowRight
-            className={styles.arrowRight}
-            onClick={prevNext}
-          />
-        )}
+        <MdOutlineKeyboardArrowRight
+          className={styles.arrowRight}
+          onClick={prevNext}
+        />
       </div>
 
-      {list.map(({ id, label, title, to, component, ...linkProps }) => (
+      {list.map(({ id, label, title, to, component, ...linkProps }, index) => (
         <Button
           variant="description_tab"
           key={id}
@@ -80,7 +58,9 @@ export default function SliderTabs({ list }) {
           activeClassName={styles.description_tabActive}
           contentCol
         >
-          <span className={styles.title}>{label}</span>
+          <span ref={index === 7 ? buttonsRef : null} className={styles.title}>
+            {label}
+          </span>
           <span className={styles.subTitle}>{title}</span>
         </Button>
       ))}
