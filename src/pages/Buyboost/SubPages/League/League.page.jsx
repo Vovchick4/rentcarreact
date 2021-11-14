@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { useFormik } from 'formik';
+import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
 import { toast } from 'react-toastify';
 import Substrate from '../../Substrate';
@@ -15,6 +17,7 @@ import {
 } from '../../../../data/BuyBoostDataSelects';
 import headImg from '../../../../images/bronze_1.png';
 import bronze_1 from '../../../../images/bronze_1 2.png';
+import { orderActions } from '../../../../redux/order';
 
 const validationSchema = Yup.object().shape({
   league: Yup.string().required('League is required'),
@@ -35,6 +38,8 @@ const validationSchema = Yup.object().shape({
 });
 
 export default function LeaguePage() {
+  const dispatch = useDispatch();
+
   const formik = useFormik({
     initialValues: {
       league: '',
@@ -53,32 +58,41 @@ export default function LeaguePage() {
     },
   });
 
+  // useEffect(() => {
+
+  // }, [])
+
   function handleChangeLeague(value) {
-    formik.setFieldValue('league', value);
+    formik.setFieldValue('league', value.label);
+    dispatch(orderActions.incrementByAmount(value.price));
   }
 
   function handleChangeDivision(value) {
-    formik.setFieldValue('division', value);
+    formik.setFieldValue('division', value.label);
   }
 
   function handleChangeLp(value) {
-    formik.setFieldValue('lp', value);
+    formik.setFieldValue('lp', value.label);
   }
 
   function handleChangeServer(value) {
-    formik.setFieldValue('server', value);
+    formik.setFieldValue('server', value.label);
   }
 
   function handleChangeQueue(value) {
-    formik.setFieldValue('queue', value);
+    formik.setFieldValue('queue', value.label);
   }
 
   function handleChangeDesireLeague(value) {
-    formik.setFieldValue('desireLeague', value);
+    formik.setFieldValue('desireLeague', value.label);
+    console.log(value.label !== formik.values.desireLeague);
+    if (value.label !== formik.values.desireLeague) {
+      dispatch(orderActions.increment(value.id));
+    }
   }
 
   function handleChangeDesireDivison(value) {
-    formik.setFieldValue('desireDivision', value);
+    formik.setFieldValue('desireDivision', value.label);
   }
 
   return (
