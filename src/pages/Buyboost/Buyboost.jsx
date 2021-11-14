@@ -77,6 +77,7 @@ export default function Buyboost() {
         <Container>
           <SliderTabs list={links} />
           {/* Add dinamic links (tabs) */}
+          {/* Add dinamic links (tabs) */}
           <div className={styles.contentForm}>
             {links.map(({ id, component, to }) => (
               <div key={id}>{urls.buyBoost + to === pathname && component}</div>
