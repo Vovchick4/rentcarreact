@@ -42,7 +42,7 @@ const links = [
     exact: true,
   },
 ];
-
+//function Sidebar
 export default function Sidebar({ open, onClose }) {
   const classesSideBar = [styles.aside];
   const classesDimmer = [styles.dimmer];
