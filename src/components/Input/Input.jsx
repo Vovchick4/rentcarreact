@@ -20,7 +20,7 @@ export default function Input({
   if (error) {
     classesInput.push(styles.inputError);
   }
-
+//input js container
   return (
     <div className={styles.container}>
       <input
