@@ -2,7 +2,7 @@ import { createElement } from 'react';
 import { Loader } from '../';
 
 import styles from './Button.module.css';
-
+//function Button
 export default function Button({
   type = 'button',
   variant = 'default',
