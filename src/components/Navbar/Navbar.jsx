@@ -19,6 +19,7 @@ const theme = {
 const NavBarModals = {
   playDemo: 'PLAY_DEMO',
 };
+//function navbar
 export default function Navbar({ openSidebar }) {
   const [backgroundColorNavbar, setBackgroundColorNavbar] = useState(
     theme.none
