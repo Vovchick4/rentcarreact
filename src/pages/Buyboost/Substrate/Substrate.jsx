@@ -1,4 +1,7 @@
+import { useSelector } from 'react-redux';
 import { Container, Button, Input } from '../../../components';
+
+import { orderSelectors } from '../../../redux/order';
 
 import styles from './Substrate.module.css';
 
@@ -10,6 +13,8 @@ import numberFivth from '../../../images/5.svg';
 import numberSix from '../../../images/6.svg';
 
 export default function Substrate({ children, onSubmit }) {
+  const totalPrice = useSelector(orderSelectors.getTotalPrice);
+
   return (
     <Container isMedia>
       <form className={styles.contentForm} onSubmit={onSubmit}>
@@ -40,7 +45,7 @@ export default function Substrate({ children, onSubmit }) {
               <span>Total </span>
               <span className={styles.priceText}>Price</span>
             </p>
-            <p className={styles.price}>€ 85.00</p>
+            <p className={styles.price}>€ {totalPrice}</p>
             <p className={styles.boostText}>
               Boost completes
               <span className={styles.boostSubTitle}> in 10 Day</span>

@@ -49,7 +49,7 @@ export default function Select({ list, defaultTitle, value, onChange, error }) {
             <li
               key={item.id}
               className={isOpen ? styles.optionActive : styles.option}
-              onClick={() => onChange(item.label)}
+              onClick={() => onChange(item)}
             >
               <span>{item.label}</span>
               {item.label === value && (

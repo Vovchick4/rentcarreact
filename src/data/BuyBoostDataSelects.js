@@ -2,22 +2,27 @@ export const league = [
   {
     id: 1,
     label: 'Iron',
+    price: 40
   },
   {
     id: 2,
     label: 'Bronz',
+    price: 80
   },
   {
     id: 3,
     label: 'Silver',
+    price: 111
   },
   {
     id: 4,
     label: 'Gold',
+    price: 333
   },
   {
     id: 5,
     label: 'Platinum',
+    price: 400
   },
 ];
 
